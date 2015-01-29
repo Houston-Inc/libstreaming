@@ -1,15 +1,18 @@
-# built application files
 *.apk
 *.ap_
 *.dex
 *.class
 bin/
 gen/
-*.class
-*.o
-*.so
-*.sh
-local.properties
-custom_rules.xml
-ant.properties
-*~
+.gradle
+/local.properties
+.DS_Store
+/build
+
+*.iws
+*.iml
+*.ipr
+.idea/
+out
+
+Thumbs.db
