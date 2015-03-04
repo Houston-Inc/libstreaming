@@ -16,3 +16,7 @@ gen/
 out
 
 Thumbs.db
+
+gradle/
+gradlew
+gradlew.bat
