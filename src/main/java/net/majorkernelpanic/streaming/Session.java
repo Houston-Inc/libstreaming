@@ -118,14 +118,14 @@ public class Session {
 	 * Creates a streaming session that can be customized by adding tracks.
 	 */
 	public Session() {
-		long uptime = System.currentTimeMillis();
 
 		HandlerThread thread = new HandlerThread("net.majorkernelpanic.streaming.Session");
 		thread.start();
 
 		mHandler = new Handler(thread.getLooper());
 		mMainHandler = new Handler(Looper.getMainLooper());
-		mTimestamp = (uptime/1000)<<32 & (((uptime-((uptime/1000)*1000))>>32)/1000); // NTP timestamp
+        long uptime = System.currentTimeMillis() + 2208988800000l;
+		mTimestamp = (uptime/1000)<<32 | (((uptime % 1000)<<32)/1000); // NTP timestamp
 		mOrigin = "127.0.0.1";
 	}
 
